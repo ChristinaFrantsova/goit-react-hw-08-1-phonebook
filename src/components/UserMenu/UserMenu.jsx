@@ -10,7 +10,8 @@ const UserMenu = () => {
 
   return (
     <div>
-      <p>Welcome, {user.name}</p>
+      <p>Welcome, user.name</p>
+      {/* {user.name} */}
       <button>Logout</button>
       {/* onClick={handleLogOut} */}
     </div>
