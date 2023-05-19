@@ -1,24 +1,23 @@
-// import { useDispatch } from 'react-redux';
-// import { register } from 'redux/auth/authThunk';
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/auth/authThunk';
 
 const RegisterForm = () => {
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  //   const handleSubmit = event => {
-  //     event.preventDefault();
-  //     const form = event.target;
-  //     dispatch(
-  //       register({
-  //         name: form.elements.name.value,
-  //         email: form.elements.email.value,
-  //         password: form.elements.password.value,
-  //       })
-  //     );
-  //     form.reset();
-  //   };
+  const handleSubmit = event => {
+    event.preventDefault();
+    const form = event.target;
+    dispatch(
+      register({
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
+    form.reset();
+  };
   return (
-    <form autoComplete="off">
-      {/* onSubmit={handleSubmit} */}
+    <form autoComplete="off" onSubmit={handleSubmit}>
       <label>
         <span>Username:</span>
         <input type="text" name="name" />
@@ -31,7 +30,7 @@ const RegisterForm = () => {
         <span>Password:</span>
         <input type="password" name="password" />
       </label>
-      <button type="submit">Register</button>
+      <button type="submit">SignUp</button>
     </form>
   );
 };

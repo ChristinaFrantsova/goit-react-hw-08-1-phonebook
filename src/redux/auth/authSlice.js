@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { register, logIn, logOut, refreshUser } from './authThunk';
+import { register } from './authThunk';
+//logIn, logOut, refreshUser;
 
 const initialState = {
   user: {
@@ -14,7 +15,22 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  extraReducers: {},
+  extraReducers: builder => {
+    builder
+      //   singup
+      .addCase(register.pending, (state, action) => {
+        console.log('pending ====> ');
+      })
+      .addCase(register.fulfilled, (state, action) => {
+        console.log(action.payload);
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
+      })
+      .addCase(register.rejected, (state, action) => {
+        console.log('rejected ====> ');
+      });
+  },
 });
 
 export default authSlice.reducer;
@@ -58,5 +74,3 @@ export default authSlice.reducer;
 //       });
 //   },
 // });
-
-// export default authSlice;

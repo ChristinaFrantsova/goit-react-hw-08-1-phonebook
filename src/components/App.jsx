@@ -9,8 +9,6 @@ import ContactsPage from 'pages/ContactsPage';
 export const App = () => {
   return (
     <>
-      <h3>Hello</h3>
-
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />}></Route>

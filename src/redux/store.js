@@ -20,7 +20,7 @@ import {
 const persistConfig = {
   key: 'auth',
   storage,
-  whitelist: 'token',
+  whitelist: ['token'],
 };
 
 const rootReducer = combineReducers({

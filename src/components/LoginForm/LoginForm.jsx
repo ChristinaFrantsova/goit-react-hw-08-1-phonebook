@@ -2,19 +2,19 @@
 // import { logIn } from 'redux/auth/authThunk';
 
 const LoginForm = () => {
-  //   const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  //   const handleSubmit = event => {
-  //     event.preventDefault();
-  //     const form = event.target;
-  //     dispatch(
-  //       logIn({
-  //         email: form.elements.email.value,
-  //         password: form.elements.password.value,
-  //       })
-  //     );
-  //     form.reset();
-  //   };
+  // const handleSubmit = event => {
+  //   event.preventDefault();
+  //   const form = event.target;
+  //   dispatch(
+  //     logIn({
+  //       email: form.elements.email.value,
+  //       password: form.elements.password.value,
+  //     })
+  //   );
+  //   form.reset();
+  // };
 
   return (
     <form autoComplete="off">

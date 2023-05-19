@@ -1,31 +1,31 @@
-// import { createAsyncThunk } from '@reduxjs/toolkit';
-// import {
-//   signUpUserApi,
-//   setAuthHeader,
-//   clearAuthHeader,
-//   logInUserApi,
-//   logOutUserApi,
-//   getCurrentUser,
-// } from '../../api/Api';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import {
+  signUpUserApi,
+  setAuthHeader,
+  //   clearAuthHeader,
+  //   logInUserApi,
+  //   logOutUserApi,
+  //   getCurrentUser,
+} from '../../api/Api';
 
-// export const register = createAsyncThunk(
-//   'auth/register',
-//   async (credentials, thunkAPI) => {
-//     try {
-//       const responce = await signUpUserApi(credentials);
-//       setAuthHeader(responce.data.token);
-//       return responce.data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const register = createAsyncThunk(
+  'auth/register',
+  async (userInfo, thunkAPI) => {
+    try {
+      const responce = await signUpUserApi(userInfo);
+      setAuthHeader(responce.data.token);
+      return responce.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 
 // export const logIn = createAsyncThunk(
 //   'auth/login',
-//   async (credentials, thunkAPI) => {
+//   async (userInfo, thunkAPI) => {
 //     try {
-//       const responce = await logInUserApi(credentials);
+//       const responce = await logInUserApi(userInfo);
 //       setAuthHeader(responce.data.token);
 //       return responce.data;
 //     } catch (error) {
