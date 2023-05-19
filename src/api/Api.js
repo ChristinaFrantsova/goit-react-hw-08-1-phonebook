@@ -17,6 +17,7 @@ export const clearAuthHeader = () => {
 
 export const getContactsApi = async () => {
   const responce = await axios.get('/contacts');
+  // setAuthHeader(responce.data.token);
   return responce.data;
 };
 
