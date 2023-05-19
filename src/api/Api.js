@@ -1,6 +1,19 @@
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://64634fc94dca1a661359d866.mockapi.io';
+// axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+
+// Utility to add JWT
+export const setAuthHeader = token => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
+
+// Utility to remove JWT
+export const clearAuthHeader = () => {
+  axios.defaults.headers.common.Authorization = '';
+};
+
+// // ======= Contacts ======
 
 export const getContactsApi = async () => {
   const responce = await axios.get('/contacts');
@@ -17,43 +30,12 @@ export const deleteContactsApi = async id => {
   return responce.data;
 };
 
-// import axios from 'axios';
-
-// axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
-
-// // ======= Contacts ======
-
-// export const getContactsApi = async () => {
-//   const responce = await axios.get('/contacts');
-//   return responce.data;
-// };
-
-// export const addContactsApi = async contact => {
-//   const responce = await axios.post('/contacts', contact);
-//   return responce.data;
-// };
-
-// export const deleteContactsApi = async id => {
-//   const responce = await axios.delete(`/contacts/${id}`);
-//   return responce.data;
-// };
-
 // // export const updateContactsAPI = async id => {
 // //   const { data } = await axios.patch(`/contacts/${id}`);
 // //   return data;
 // // };
 
 // // ======= User authorization ======
-
-// // Utility to add JWT
-// export const setAuthHeader = token => {
-//   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-// };
-
-// // Utility to remove JWT
-// export const clearAuthHeader = () => {
-//   axios.defaults.headers.common.Authorization = '';
-// };
 
 // export const signUpUserApi = async user => {
 //   try {

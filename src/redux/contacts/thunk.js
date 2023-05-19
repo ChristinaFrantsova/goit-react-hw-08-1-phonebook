@@ -1,5 +1,24 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getContactsApi, addContactsApi, deleteContactsApi } from 'api/Api';
+import {
+  getContactsApi,
+  addContactsApi,
+  deleteContactsApi,
+  // setAuthHeader,
+} from 'api/Api';
+
+//  варіант з токеном авторизації
+// export const fetchContactsThunk = createAsyncThunk(
+//   'contacts/fetchAll',
+//   async (_, thunkAPI) => {
+//     try {
+//       const responce = await getContactsApi();
+//       setAuthHeader(responce.data.token);
+//       return responce.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
 
 export const fetchContactsThunk = createAsyncThunk(
   'contacts/fetchAll',
