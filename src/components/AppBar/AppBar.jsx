@@ -13,7 +13,8 @@ const AppBar = () => {
         display: 'flex',
         padding: 20,
         justifyContent: 'space-between',
-        alignItems: 'center',
+        borderBottom: 'thick double #76b4be98',
+        // borderBottom: '3mm ridge #76b4beaa',
       }}
     >
       <Navigation />

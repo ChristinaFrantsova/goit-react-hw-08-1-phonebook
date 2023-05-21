@@ -1,5 +1,13 @@
+import Image from '../images/phone-book.png';
+import { Banner, Box, Title } from './HomePage.styled';
+
 const HomePage = () => {
-  return <h1>Welcome to Phonebook App</h1>;
+  return (
+    <Box>
+      <Title>Welcome to Phonebook App</Title>
+      <Banner styled={{ backgroundImage: `url(${Image})` }} />
+    </Box>
+  );
 };
 
 export default HomePage;
