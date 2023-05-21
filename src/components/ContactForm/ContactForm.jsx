@@ -28,7 +28,7 @@ const ContactForm = ({ checkDublicateName }) => {
     event.preventDefault();
     const newContact = {
       name,
-      phone: number,
+      number: number,
     };
     checkDublicateName({ name })
       ? alert(`This name "${name}" is already exist!`)

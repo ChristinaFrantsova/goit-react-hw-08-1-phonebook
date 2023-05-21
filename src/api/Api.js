@@ -23,6 +23,7 @@ export const getContactsApi = async () => {
 
 export const addContactsApi = async contact => {
   const responce = await axios.post('/contacts', contact);
+  console.log(responce.data);
   return responce.data;
 };
 
