@@ -16,3 +16,8 @@ export const Link = styled(NavLink)`
     color: #79bfc9;
   }
 `;
+
+export const Nav = styled.nav`
+  display: flex;
+  align-items: flex-end;
+`;
